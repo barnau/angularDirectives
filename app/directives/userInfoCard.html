@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        User Info Directive
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>Planet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{vm.user.name}}</td>
+                    <td>{{vm.user.address.street}}</td>
+                    <td>{{vm.user.address.city}}</td>
+                    <td>{{vm.user.address.planet}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>
+            Friends
+        </h3>
+        <ul>
+            <li ng-repeat="f in vm.user.friends">{{f}}</li>
+        </ul>
+        <div ng-show="vm.user.rank">
+            <h4>Rank: {{vm.user.rank}}</h4>
+        </div>
+        <button ng-show="!vm.user.rank" class="btn btn-success" ng-click="vm.knightMe(vm.user)">    
+            Knight Me
+        </button>
+    </div>
+</div>
