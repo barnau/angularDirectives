@@ -5,15 +5,15 @@
         .module('app')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['DataFactory', '$stateParams'];
+    MainController.$inject = ['$scope', 'DataFactory', '$stateParams'];
 
     /* @ngInject */
-    function MainController(DataFactory, $stateParams) {
+    function MainController($scope, DataFactory, $stateParams) {
         var vm = this;
         vm.title = 'MainController';
         vm.test = 'this is a test from MainController';
-
-
+        vm.test = "Variable on main controller";
+        console.log($scope);
 
 
 

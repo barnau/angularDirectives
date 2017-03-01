@@ -2,11 +2,15 @@
     'use strict';
 
     angular.module('app')
-        .controller('userInfoCardCtrl', userInfoCardCtrl);
+        .controller('userInfoCardCtrl', ['$scope', userInfoCardCtrl]);
 
-    function userInfoCardCtrl() {
+    function userInfoCardCtrl($scope) {
 
         var vm = this;
+
+        console.log(vm.test);
+
+        vm.min = 3;
         vm.user = {
             name: 'Luke Skywalker',
             address: {
